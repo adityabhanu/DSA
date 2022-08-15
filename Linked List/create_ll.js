@@ -31,6 +31,34 @@ function addAtStart(val) {
 
 addAtStart(5);
 
+//insert node at mid
+function insertAtMid(val) {
+  var midNode = new Node(val);
+  var temp = head;
+  var count = 0;
+
+  while (temp != null) {
+    temp = temp.next;
+    count++;
+  }
+  var mid = Math.floor(count / 2);
+
+  var tmp = head;
+  while (tmp != null) {
+    tmp = tmp.next;
+    mid--;
+    if (mid == 1) {
+      break;
+    }
+  }
+
+  nextNode = tmp.next;
+  tmp.next = midNode;
+  midNode.next = nextNode;
+}
+
+insertAtMid(15);
+
 var temp = head;
 while (temp != null) {
   console.log(temp.data);
